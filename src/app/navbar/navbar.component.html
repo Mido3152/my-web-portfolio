@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a href="#" class="brand-link">
+        <span class="brand-text">Ahmed Elsaeed</span>
+      </a>
+    </div>
+
+    <div class="navbar-menu"></div>
+
+    <div class="navbar-actions">
+      <button
+        class="theme-toggle"
+        (click)="toggleTheme()"
+        aria-label="Toggle theme"
+      >
+        <div class="theme-icon-container">
+          <img
+            class="theme-icon"
+            [src]="
+              isDarkTheme
+                ? '../../assets/light-switch-on.svg'
+                : '../../assets/light-switch-off.svg'
+            "
+            [alt]="
+              isDarkTheme ? 'Switch to light theme' : 'Switch to dark theme'
+            "
+          />
+        </div>
+      </button>
+    </div>
+  </div>
+</nav>

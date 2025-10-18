@@ -1,0 +1,77 @@
+<div class="viewer-container">
+  <div class="section-header">
+    <h2 class="section-title">Explore My Work</h2>
+    <p class="section-subtitle">
+      Discover my projects, insights, and professional journey
+    </p>
+  </div>
+
+  <div class="navigation-grid">
+    <div class="nav-card" (click)="blog()">
+      <div class="card-icon">
+        <img class="button-icon" src="../../assets/message-2.svg" alt="Blog" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Blog</h3>
+        <p class="card-description">
+          Thoughts on technology, development, and innovation
+        </p>
+      </div>
+      <div class="card-overlay"></div>
+    </div>
+
+    <div class="nav-card" (click)="projects()">
+      <div class="card-icon">
+        <img class="button-icon" src="../../assets/rocket.svg" alt="Projects" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Projects</h3>
+        <p class="card-description">
+          Showcase of my latest work and technical achievements
+        </p>
+      </div>
+      <div class="card-overlay"></div>
+    </div>
+
+    <div class="nav-card" (click)="about()">
+      <div class="card-icon">
+        <img
+          class="button-icon"
+          src="../../assets/circle-info.svg"
+          alt="About"
+        />
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">About</h3>
+        <p class="card-description">
+          Learn about my background, skills, and professional journey
+        </p>
+      </div>
+      <div class="card-overlay"></div>
+    </div>
+
+    <div class="nav-card" (click)="contact()">
+      <div class="card-icon">
+        <img class="button-icon" src="../../assets/at-sign.svg" alt="Contact" />
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Contact</h3>
+        <p class="card-description">
+          Get in touch for collaborations and opportunities
+        </p>
+      </div>
+      <div class="card-overlay"></div>
+    </div>
+  </div>
+
+  <div class="viewer-content" *ngIf="content">
+    <div class="content-card">
+      <div class="content-header">
+        <h3 class="content-title">{{ content }}</h3>
+      </div>
+      <div class="content-body">
+        <p class="content-text">Content will be displayed here...</p>
+      </div>
+    </div>
+  </div>
+</div>
