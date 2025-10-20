@@ -12,7 +12,6 @@ export class NavbarComponent implements OnInit {
   isDarkTheme: boolean = true;
 
   ngOnInit() {
-    // Check for saved theme preference or default to dark
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       this.isDarkTheme = savedTheme === 'dark';
@@ -23,7 +22,6 @@ export class NavbarComponent implements OnInit {
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
     this.applyTheme();
-    // Save theme preference
     localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
   }
 

@@ -11,4 +11,61 @@ export class AppModule {}
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {}
+export class AppComponent {
+  private scrollEnabled = false;
+
+  constructor() {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    this.resetScrollPosition();
+    this.disableScrolling();
+    this.setupPageVisibilityHandler();
+  }
+
+  scrollToExplore() {
+    this.enableScrolling();
+
+    const contentSection = document.querySelector('.content-section');
+    if (contentSection) {
+      contentSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
+
+  private disableScrolling() {
+    document.body.style.overflow = 'hidden';
+    document.body.classList.remove('scroll-enabled');
+    this.scrollEnabled = false;
+  }
+
+  private enableScrolling() {
+    document.body.style.overflow = 'auto';
+    document.body.classList.add('scroll-enabled');
+    this.scrollEnabled = true;
+  }
+
+  private resetScrollPosition() {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
+
+  private setupPageVisibilityHandler() {
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        this.resetScrollPosition();
+        this.disableScrolling();
+      }
+    });
+
+    window.addEventListener('focus', () => {
+      this.resetScrollPosition();
+      if (!this.scrollEnabled) {
+        this.disableScrolling();
+      }
+    });
+  }
+}

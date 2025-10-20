@@ -1,4 +1,4 @@
-<div class="viewer-container">
+<div class="viewer-container" [class.expanded]="expandedCard">
   <div class="section-header">
     <h2 class="section-title">Explore My Work</h2>
     <p class="section-subtitle">
@@ -64,13 +64,38 @@
     </div>
   </div>
 
-  <div class="viewer-content" *ngIf="content">
-    <div class="content-card">
-      <div class="content-header">
-        <h3 class="content-title">{{ content }}</h3>
+  <div class="expanded-content" *ngIf="expandedCard !== ''">
+    <div class="expanded-header">
+      <button class="close-btn" (click)="closeExpanded()">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M18 6L6 18M6 6L18 18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="expanded-body">
+      <div class="expanded-icon">
+        <img
+          class="expanded-button-icon"
+          [src]="getIconForCard(expandedCard)"
+          [alt]="expandedCard"
+        />
       </div>
-      <div class="content-body">
-        <p class="content-text">Content will be displayed here...</p>
+      <h1 class="expanded-title">{{ getTitleForCard(expandedCard) }}</h1>
+      <div class="expanded-text">
+        <p>{{ getDescriptionForCard(expandedCard) }}</p>
+        <p>Content will be displayed here...</p>
       </div>
     </div>
   </div>

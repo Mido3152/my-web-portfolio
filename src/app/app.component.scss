@@ -20,19 +20,34 @@
 }
 // Light theme portfolio container
 
+// Disable scrolling globally
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow: hidden;
+  scroll-behavior: auto;
+
+  &.scroll-enabled {
+    overflow: auto;
+    scroll-behavior: smooth;
+  }
+}
+
 // Main content area
 .main-content {
   padding-top: 80px; // Space for fixed navbar
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
 }
 
 // Hero Section
 .hero-section {
-  min-height: 70vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2rem;
   position: relative;
 
@@ -93,13 +108,12 @@
   animation: fadeInUp 1s ease-out 0.4s both;
   cursor: pointer;
   transition: all 0.3s ease;
-  position: relative;
+  position: absolute;
+  bottom: 8rem;
   z-index: 2;
-  margin-top: auto;
-  padding-bottom: 2rem;
 
   &:hover {
-    transform: translateY(5px);
+    transform: translateX(-50%) translateY(5px);
   }
 
   &:hover .scroll-arrow {
@@ -194,6 +208,18 @@
   }
   60% {
     transform: translateY(-5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
   }
 }
 
