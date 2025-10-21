@@ -1,9 +1,10 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-viewer',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './viewer.component.html',
   styleUrl: './viewer.component.scss',
 })
