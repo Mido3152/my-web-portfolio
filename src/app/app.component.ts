@@ -13,6 +13,7 @@ export class AppModule {}
 })
 export class AppComponent {
   private scrollEnabled = false;
+  title = 'my-web-portfolio';
 
   constructor() {
     if ('scrollRestoration' in history) {
@@ -39,6 +40,9 @@ export class AppComponent {
     document.body.style.overflow = 'hidden';
     document.body.classList.remove('scroll-enabled');
     this.scrollEnabled = false;
+    if (this.scrollEnabled) {
+      console.log('Scrolling disabled');
+    }
   }
 
   private enableScrolling() {

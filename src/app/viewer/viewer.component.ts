@@ -1,10 +1,12 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { BlogComponent } from '../blog/blog.component';
+import { ContactComponent } from '../contact/contact.component';
 
 @Component({
   selector: 'app-viewer',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, BlogComponent, ContactComponent],
   templateUrl: './viewer.component.html',
   styleUrl: './viewer.component.scss',
 })
@@ -60,7 +62,8 @@ export class ViewerComponent {
   getDescriptionForCard(card: string): string {
     const descriptions: { [key: string]: string } = {
       blog: 'A working demo on back-end and database implementation',
-      projects: 'Showcase of my latest work and technical achievements',
+      projects:
+        'Showcase of my latest work and technical achievements (Uses Github API to update automatically)',
       about: 'Learn about my background, skills, and professional journey',
       contact: 'Get in touch for collaborations and opportunities',
     };

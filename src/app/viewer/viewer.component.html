@@ -95,7 +95,8 @@
       <h1 class="expanded-title">{{ getTitleForCard(expandedCard) }}</h1>
       <div class="expanded-text">
         <p>{{ getDescriptionForCard(expandedCard) }}</p>
-        <p>Content will be displayed here...</p>
+        <app-blog *ngIf="expandedCard === 'blog'"> </app-blog>
+        <app-contact *ngIf="expandedCard === 'contact'"> </app-contact>
       </div>
     </div>
   </div>

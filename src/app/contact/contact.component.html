@@ -1,1 +1,20 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <ul>
+    <li>
+      <img class="contact-icon" src="../../assets/phone-volume.svg" /> Phone:
+      <a href="{{ 'tel:+' + phoneNumber }}"> {{ "   " + phoneNumber }}</a>
+    </li>
+    <li>
+      <img class="contact-icon" src="../../assets/envelope.svg" />
+      Email:
+      <a href="{{ 'mailto:' + emailAddress }}">{{ "   " + emailAddress }}</a>
+    </li>
+    <li>
+      <img class="contact-icon" src="../../assets/linkedin.svg" />
+      LinkedIn:
+      <a target="_blank" rel="noopener noreferrer" href="{{ linkedInUrl }}">{{
+        "   " + linkedInUrl
+      }}</a>
+    </li>
+  </ul>
+</div>
