@@ -1,8 +1,9 @@
 .blog-container {
+  overflow-y: scroll;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  height: 500px;
+  height: 20vw;
 }
 
 :host-context(body.dark-theme) .blog-container {
