@@ -2,11 +2,19 @@ import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { BlogComponent } from '../blog/blog.component';
 import { ContactComponent } from '../contact/contact.component';
+import { AboutComponent } from '../about/about.component';
+import { MyprojectsComponent } from '../myprojects/myprojects.component';
 
 @Component({
   selector: 'app-viewer',
   standalone: true,
-  imports: [NgIf, BlogComponent, ContactComponent],
+  imports: [
+    NgIf,
+    BlogComponent,
+    ContactComponent,
+    AboutComponent,
+    MyprojectsComponent,
+  ],
   templateUrl: './viewer.component.html',
   styleUrl: './viewer.component.scss',
 })

@@ -97,6 +97,8 @@
         <p>{{ getDescriptionForCard(expandedCard) }}</p>
         <app-blog *ngIf="expandedCard === 'blog'"> </app-blog>
         <app-contact *ngIf="expandedCard === 'contact'"> </app-contact>
+        <app-about *ngIf="expandedCard === 'about'"> </app-about>
+        <app-myprojects *ngIf="expandedCard === 'projects'"> </app-myprojects>
       </div>
     </div>
   </div>
