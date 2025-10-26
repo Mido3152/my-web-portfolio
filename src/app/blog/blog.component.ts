@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule, NgFor } from '@angular/common';
+import { BloggetService } from '../blogget.service';
 
 @Component({
   selector: 'app-blog',
@@ -9,24 +10,16 @@ import { CommonModule, NgFor } from '@angular/common';
   styleUrl: './blog.component.scss',
 })
 export class BlogComponent {
-  blogPosts = [
-    {
-      title: 'Lorem Ipsum in Web Design',
-      excerpt:
-        'Lorem ipsum is simply dummy text of the printing and typesetting industry.',
-      date: '2024-01-15',
-    },
-    {
-      title: 'Test Test Test Testing',
-      excerpt:
-        'Testing is essential to ensure the quality and reliability of software applications.',
-      date: '2024-01-10',
-    },
-    {
-      title: 'Testing Angular Applications',
-      excerpt:
-        'this is filler text for testing angular applications in a blog component.',
-      date: '2024-01-01',
-    },
-  ];
+  blogs: any[] = [];
+  constructor(private bloggetservice: BloggetService) {}
+  ngOnInit(): void {
+    this.bloggetservice.getBlogs().subscribe(
+      (data) => {
+        this.blogs = data;
+      },
+      (error) => {
+        console.error('Error fetching blogs:', error);
+      }
+    );
+  }
 }
