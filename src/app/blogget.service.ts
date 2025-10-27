@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class BloggetService {
-  private apiUrl = 'http://localhost:3000/blogs';
+  private apiUrl = 'https://www.ahmedelsaeed.com/api/blogs';
 
   constructor(private http: HttpClient) {}
   getBlogs() {

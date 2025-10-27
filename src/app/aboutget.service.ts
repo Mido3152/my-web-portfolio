@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class aboutgetService {
-  private apiUrl = 'http://localhost:3000/about';
+  private apiUrl = 'https://www.ahmedelsaeed.com/api/about';
   constructor(private http: HttpClient) {}
   getAbout() {
     return this.http.get<any[]>(this.apiUrl);

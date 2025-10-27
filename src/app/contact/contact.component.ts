@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  phoneNumber = '+123-456-7890';
+  phoneNumber = '+201015382372';
   emailAddress = 'ae.elsaeed315@gmail.com';
   linkedInUrl = 'https://www.linkedin.com/in/ahmed-elsaeed3152/';
 }
